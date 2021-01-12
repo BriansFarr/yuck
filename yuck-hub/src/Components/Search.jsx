@@ -9,25 +9,27 @@ const Search = () => {
   const [rest, setRest] = useState([]);
   const [search, setSearch] = useState('');
 
-  const [query, setQuery] = useState('IRVING FARM');
+  const [query, setQuery] = useState(' ');
   
 
-  useEffect(() => { getRest() }, [query] );
+  useEffect(() => { getRest() },[query] );
   
-
+  
   const getRest = async () => {
-  
-    const response = await fetch(`https://data.cityofnewyork.us/resource/43nn-pn8j.json?dba=${query}`)
+    
+    const response = await fetch(`https://data.cityofnewyork.us/resource/43nn-pn8j.json?dba=${query}&$limit=5&$order=inspection_date DESC`)
     const res = await response.json();
-    console.log(res[0].dba);
+    // console.log(res[0].dba);
+    
     const results = res;
     setRest(results)
     console.log(results)
-  
     
-
+    
+    
+    
   }
-
+  
   const updateSearch = e => {
     setSearch(e.target.value);
     
@@ -52,7 +54,7 @@ const Search = () => {
       </form>
       
       {rest.map(results => (
-        <Rest key={results.id}
+        <Rest key= {results.id}
           name={results.dba}
           violations={results.violation_description}
           rating={results.score}

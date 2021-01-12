@@ -13,7 +13,7 @@ const Rest = ({name, violations, rating, building, street, zipcode, critical_fla
       <h2>Rating:</h2>
       <h3>{rating}</h3>
       {/* <h2>{critical_flag}</h2> */}
-      {/* <h2>{date}</h2> */}
+      <h2>{date}</h2>
       <p>{ action }</p>
       <p>{violations}</p>
       <h3>Grade:</h3>
