@@ -12,12 +12,12 @@ const Search = () => {
   const [query, setQuery] = useState(' ');
   
 
-  useEffect(() => { getRest() },[query] );
+  useEffect(() => { getRest() } );
   
   
   const getRest = async () => {
     
-    const response = await fetch(`https://data.cityofnewyork.us/resource/43nn-pn8j.json?dba=${query}&$limit=5&$order=inspection_date DESC`)
+    const response = await fetch(`https://data.cityofnewyork.us/resource/43nn-pn8j.json?dba=${query}&$limit=20&$order=inspection_date DESC`)
     const res = await response.json();
     // console.log(res[0].dba);
     
@@ -31,7 +31,7 @@ const Search = () => {
   }
   
   const updateSearch = e => {
-    setSearch(e.target.value);
+    setSearch(e.target.value.toUpperCase());
     
   }
 
