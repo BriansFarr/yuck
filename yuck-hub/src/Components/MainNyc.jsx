@@ -4,9 +4,9 @@ import Rest from './Rest'
 
 export default function MainNyc() {
   return (
-    <div>
+    <>
       <NycSearch />
       <Rest/>
-    </div>
+    </>
   )
 }

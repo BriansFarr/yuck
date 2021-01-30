@@ -17,6 +17,9 @@ export default function Nav() {
         < Link to="/chicago">
           <li>Chicago</li>
         </Link>
+        < Link to="/about">
+          <li>About</li>
+        </Link>
       </ul>
     </nav>
   )

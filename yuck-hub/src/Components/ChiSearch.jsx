@@ -3,26 +3,26 @@ import Rest from './Rest';
 
 
 
-const LaSearch = () => {
+const ChiSearch = () => {
   
 
-  const [rest, setRest1] = useState([]);
-  const [search, setSearch1] = useState('');
+  const [rest, setRest2] = useState([]);
+  const [search, setSearch2] = useState('');
 
-  const [query, setQuery1] = useState(' ');
+  const [query, setQuery2] = useState(' ');
   
 
-  useEffect(() => { getRest1() },[query] );
+  useEffect(() => { getRest2() }, [query] );
   
   
-  const getRest1 = async () => {
+  const getRest2 = async () => {
     
-    const response = await fetch(`https://data.lacity.org/resource/ckya-qgys.json?facility_name=${query}`)
+    const response = await fetch(`https://data.cityofchicago.org/resource/qizy-d2wf.json?aka_name=${query}`)
     const res = await response.json();
     // console.log(res[0].dba);
     
     const results = res;
-    setRest1(results)
+    setRest2(results)
     console.log(results)
     
     
@@ -31,14 +31,14 @@ const LaSearch = () => {
   }
   
   const updateSearch = e => {
-    setSearch1(e.target.value.toUpperCase());
+    setSearch2(e.target.value.toUpperCase());
     
   }
 
-  const getSearch1 = e => {
+  const getSearch2 = e => {
     e.preventDefault();
-    setQuery1(search);
-    setSearch1('');
+    setQuery2(search);
+    setSearch2('');
     
   }
 
@@ -48,19 +48,19 @@ const LaSearch = () => {
 
       <p>Search Here</p>
 
-      <form  onSubmit = {getSearch1} className = "search-form">
+      <form  onSubmit = {getSearch2} className = "search-form">
         <input className="search-bar" type="text" value={search} onChange={updateSearch}/>
       <button  className="search-button" type="submit">search</button>
       </form>
       
       {rest.map(results => (
         <Rest key= {results.id}
-          name={results.facility_name}
-          violations={results.violation_description}
-          rating={results.score}
-          building={results.building}
-          street={results.street}
-          zipcode={results.zipcode}
+          name={results.aka_name}
+          violations={results.violations}
+          rating={results.results}
+          building={results.address}
+          street={results.city}
+          zipcode={results.zip}
           date={results.inspection_date}
           action={results.action}
           critical={results.critical_flag}
@@ -76,4 +76,4 @@ const LaSearch = () => {
  
   )
 }
-export default LaSearch
+export default ChiSearch

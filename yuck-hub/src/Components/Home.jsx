@@ -6,6 +6,7 @@ import MainNyc from './MainNyc'
 import Footer from './Footer'
 import Header from './Header'
 import About from './About'
+import MainChi from './MainChi';
 
 export default function Home() {
   return (
@@ -17,9 +18,10 @@ export default function Home() {
             <Switch>
               <Route exact path="/about" component={About} />
               <Route path="/la" component={MainLa} />
-              <Route path="/nyc" component={MainNyc} />
+            <Route path="/nyc" component={MainNyc} />
+            <Route path="/chicago" component={MainChi}/>
             </Switch>
-            
+            <Footer />
           </div>
 
       </Router>

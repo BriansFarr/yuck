@@ -2,11 +2,11 @@ import React from 'react'
 import LaSearch from './LaSearch'
 import Rest from './Rest'
 
-export default function Main() {
+export default function MainLa() {
   return (
-    <div>
+    <>
       <LaSearch />
       <Rest/>
-    </div>
+    </>
   )
 }
