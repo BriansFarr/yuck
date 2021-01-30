@@ -3,7 +3,7 @@ import Rest from './Rest';
 
 
 
-const Search = () => {
+const NycSearch = () => {
   
 
   const [rest, setRest] = useState([]);
@@ -12,7 +12,7 @@ const Search = () => {
   const [query, setQuery] = useState(' ');
   
 
-  useEffect(() => { getRest() } );
+  useEffect(() => { getRest() }, [query] );
   
   
   const getRest = async () => {
@@ -75,6 +75,6 @@ const Search = () => {
  
   )
 }
-export default Search
+export default NycSearch
 
 

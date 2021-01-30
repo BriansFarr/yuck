@@ -1,0 +1,79 @@
+import React, { useState, useEffect } from 'react';
+import Rest from './Rest';
+
+
+
+const LaSearch = () => {
+  
+
+  const [rest, setRest] = useState([]);
+  const [search, setSearch] = useState('');
+
+  const [query, setQuery] = useState(' ');
+  
+
+  useEffect(() => { getRest() }, [query] );
+  
+  
+  const getRest = async () => {
+    
+    const response = await fetch(`https://data.lacity.org/resource/ckya-qgys.json?facility_name=${query}`)
+    const res = await response.json();
+    // console.log(res[0].dba);
+    
+    const results = res;
+    setRest(results)
+    console.log(results)
+    
+    
+    
+    
+  }
+  
+  const updateSearch = e => {
+    setSearch(e.target.value.toUpperCase());
+    
+  }
+
+  const getSearch = e => {
+    e.preventDefault();
+    setQuery(search);
+    setSearch('');
+    
+  }
+
+  return (
+    <div className="APP">
+  
+
+      <p>Search Here</p>
+
+      <form  onSubmit = {getSearch} className = "search-form">
+        <input className="search-bar" type="text" value={search} onChange={updateSearch}/>
+      <button  className="search-button" type="submit">search</button>
+      </form>
+      
+      {rest.map(results => (
+        <Rest key= {results.id}
+          name={results.facility_name}
+          violations={results.violation_description}
+          rating={results.score}
+          building={results.building}
+          street={results.street}
+          zipcode={results.zipcode}
+          date={results.inspection_date}
+          action={results.action}
+          critical={results.critical_flag}
+          grade={results.grade}
+          boro={results.boro}
+
+        
+        />
+        
+      ))}
+
+    </div>
+ 
+  )
+}
+export default LaSearch

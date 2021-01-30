@@ -1,20 +1,21 @@
 import React from 'react';
 import './App.css';
-import Header from './Components/Header';
-import Main from './Components/Main'
-import Footer from './Components/Footer'
-import Nav from './Components/Nav'
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Home from './Components/Home'
+import MainLa from './Components/MainLa'
+import MainNyc from './Components/MainNyc'
+
 
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Nav />
-      <Main />
-      <Footer />
-  
-    </div>
+    <BrowserRouter>
+      
+        <Route path="/" component={Home} />
+        <Route path="/nyc" component={MainNyc} />
+        <Route path="/la" component={MainLa} />
+      
+    </BrowserRouter>
   );
 }
 
