@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Rest from './Rest';
+import '../CSS/SearchBar.css'
 
 
 
@@ -43,10 +44,10 @@ const NycSearch = () => {
   }
 
   return (
-    <div className="APP">
+    <div className="NycSearchBar">
   
 
-      <p>Search Here</p>
+      <p>NYC Search</p>
 
       <form  onSubmit = {getSearch} className = "search-form">
         <input className="search-bar" type="text" value={search} onChange={updateSearch}/>

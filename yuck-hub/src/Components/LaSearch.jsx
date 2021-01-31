@@ -3,6 +3,7 @@ import Rest from './Rest';
 
 
 
+
 const LaSearch = () => {
   
 
@@ -17,7 +18,7 @@ const LaSearch = () => {
   
   const getRest1 = async () => {
     
-    const response = await fetch(`https://data.lacity.org/resource/ckya-qgys.json?$where=starts_with(facility_name, '${query}' )&$limit=20&$order=activity_date DESC`)
+    const response = await fetch(`https://data.lacity.org/resource/ckya-qgys.json?$where=starts_with(facility_name, '${query}' )&$limit=20&$order=points DESC`)
     const res = await response.json();
     // console.log(res[0].dba);
     
@@ -43,10 +44,10 @@ const LaSearch = () => {
   }
 
   return (
-    <div className="APP">
+    <div className="LaSearchBar">
   
 
-      <p>Search Here</p>
+      <p>Los Angeles Search</p>
 
       <form  onSubmit = {getSearch1} className = "search-form">
         <input className="search-bar" type="text" value={search} onChange={updateSearch}/>

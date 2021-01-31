@@ -43,10 +43,10 @@ const ChiSearch = () => {
   }
 
   return (
-    <div className="APP">
+    <div className="ChicagoSearchBar">
   
 
-      <p>Search Here</p>
+      <p>Chicago Search</p>
 
       <form  onSubmit = {getSearch2} className = "search-form">
         <input className="search-bar" type="text" value={search} onChange={updateSearch}/>

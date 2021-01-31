@@ -6,7 +6,7 @@ import '../CSS/Nav.css'
 export default function Nav() {
   return (
     <nav className="Nav">
-      <ul className="nav-Links">
+      <ul>
       <Link to="/">
         <li>Home</li>
         </Link>

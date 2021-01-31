@@ -8,14 +8,17 @@ import Header from './Header'
 import About from './About'
 import MainChi from './MainChi';
 import Landing from './Landing';
+import '../CSS/Header.css'
 
 export default function Home() {
   return (
     <>
       <Router>
-      <div className="Home">
             <Header />
-          <h1>Welcome to Yuckhub! Find your favorite restaurants worst violations! </h1>
+      <div className="Home">
+          <h1>Welcome to Yuckhub!</h1> 
+          <h3>Find your favorite restaurants, worst violations!</h3>
+        </div>
           <Nav />
             <Switch>
               <Route exact path="/" component={Landing} />
@@ -25,7 +28,7 @@ export default function Home() {
             <Route path="/about" component={About}/>
             </Switch>
             <Footer />
-          </div>
+          
 
       </Router>
       

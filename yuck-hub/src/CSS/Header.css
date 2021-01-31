@@ -1,3 +1,15 @@
 .yuckHead{
   background-color: crimson;
+  padding-top: 1vh;
+  display: flex;
+  justify-content: center;
+}
+
+.Home{
+  background-color: crimson;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  margin: auto;
+  text-align: center;
+
 }
