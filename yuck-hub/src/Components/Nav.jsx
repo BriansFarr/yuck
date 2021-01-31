@@ -1,13 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import '../CSS/Nav.css'
 
 
 export default function Nav() {
   return (
-    <nav>
-       <Link to="/">
-        </Link>
+    <nav className="Nav">
       <ul className="nav-Links">
+      <Link to="/">
+        <li>Home</li>
+        </Link>
         <Link to ="/nyc">
           <li>NYC</li>
         </Link>

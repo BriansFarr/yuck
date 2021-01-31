@@ -17,7 +17,7 @@ const ChiSearch = () => {
   
   const getRest2 = async () => {
     
-    const response = await fetch(`https://data.cityofchicago.org/resource/qizy-d2wf.json?aka_name=${query}`)
+    const response = await fetch(`https://data.cityofchicago.org/resource/qizy-d2wf.json?$where=starts_with(aka_name, '${query}' )&$limit=20&$order=inspection_date DESC`)
     const res = await response.json();
     // console.log(res[0].dba);
     

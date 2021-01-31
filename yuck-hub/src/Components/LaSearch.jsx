@@ -17,7 +17,7 @@ const LaSearch = () => {
   
   const getRest1 = async () => {
     
-    const response = await fetch(`https://data.lacity.org/resource/ckya-qgys.json?facility_name=${query}`)
+    const response = await fetch(`https://data.lacity.org/resource/ckya-qgys.json?$where=starts_with(facility_name, '${query}' )&$limit=20&$order=activity_date DESC`)
     const res = await response.json();
     // console.log(res[0].dba);
     

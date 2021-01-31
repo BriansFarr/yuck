@@ -7,6 +7,7 @@ import Footer from './Footer'
 import Header from './Header'
 import About from './About'
 import MainChi from './MainChi';
+import Landing from './Landing';
 
 export default function Home() {
   return (
@@ -14,12 +15,14 @@ export default function Home() {
       <Router>
       <div className="Home">
             <Header />
-            <Nav />
+          <h1>Welcome to Yuckhub! Find your favorite restaurants worst violations! </h1>
+          <Nav />
             <Switch>
-              <Route exact path="/about" component={About} />
+              <Route exact path="/" component={Landing} />
               <Route path="/la" component={MainLa} />
             <Route path="/nyc" component={MainNyc} />
-            <Route path="/chicago" component={MainChi}/>
+            <Route path="/chicago" component={MainChi} />
+            <Route path="/about" component={About}/>
             </Switch>
             <Footer />
           </div>

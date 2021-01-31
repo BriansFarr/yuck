@@ -17,7 +17,7 @@ const NycSearch = () => {
   
   const getRest = async () => {
     
-    const response = await fetch(`https://data.cityofnewyork.us/resource/43nn-pn8j.json?dba=${query}&$limit=20&$order=inspection_date DESC`)
+    const response = await fetch(`https://data.cityofnewyork.us/resource/43nn-pn8j.json?$where=starts_with(dba, '${query}' )&$limit=20&$order=inspection_date DESC`)
     const res = await response.json();
     // console.log(res[0].dba);
     
