@@ -17,7 +17,7 @@ export default function Home() {
             <Header />
       <div className="Home">
           <h1>Welcome to Yuckhub!</h1> 
-          <h3>Find your favorite restaurants, worst violations!</h3>
+          <h3>Find your favorite restaurant's, worst health code violations!</h3>
         </div>
           <Nav />
             <Switch>

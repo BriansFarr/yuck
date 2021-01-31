@@ -24,7 +24,10 @@ const LaSearch = () => {
     
     const results = res;
     setRest1(results)
-    console.log(results)
+  
+
+    
+
     
     
     
@@ -42,8 +45,11 @@ const LaSearch = () => {
     setSearch1('');
     
   }
+  
 
   return (
+    
+    
     <div className="LaSearchBar">
   
 
