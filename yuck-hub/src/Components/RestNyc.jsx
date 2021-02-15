@@ -10,11 +10,11 @@ const RestNyc = ({name, violations, rating, building, street, zipcode, critical_
       <h1>{name}</h1>
       <p>{building} {street}</p>
       <p>{boro} { zipcode }</p>
-      <h2>Rating:</h2>
-      <h3>{rating}</h3>
+      <h2>Rating: {rating}</h2>
       <h2>{critical_flag}</h2>
-      <h2>{date}</h2>
-      <p>{ action }</p>
+      <h2>Date: {date}</h2>
+      <p>{action}</p>
+      <h2>Violations</h2>
       <p>{violations}</p>
       <h3>Grade:</h3>
       <p>{ grade }</p>

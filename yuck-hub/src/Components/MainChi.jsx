@@ -1,12 +1,12 @@
 import React from 'react'
 import ChiSearch from './ChiSearch'
-import Rest from './RestNyc'
+import RestChi from './RestChi'
 
 export default function MainChi() {
   return (
     <>
-      <ChiSearch />
-      <Rest />
+      <ChiSearch/>
+      <RestChi/>
     </>
   )
 }
