@@ -1,12 +1,12 @@
 import React from 'react'
 import NycSearch from './NycSearch'
-import Rest from './Rest'
+import RestNyc from './RestNyc'
 
 export default function MainNyc() {
   return (
     <>
       <NycSearch />
-      <Rest/>
+      <RestNyc/>
     </>
   )
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Rest from './Rest';
+import RestChi from './RestChi';
 
 
 
@@ -54,18 +54,16 @@ const ChiSearch = () => {
       </form>
       
       {rest.map(results => (
-        <Rest key= {results.id}
-          name={results.aka_name}
+        <RestChi key= {results.id}
+          dba_name={results.dba_name}
           violations={results.violations}
           rating={results.results}
-          building={results.address}
-          street={results.city}
-          zipcode={results.zip}
-          date={results.inspection_date}
-          action={results.action}
-          critical={results.critical_flag}
-          grade={results.grade}
-          boro={results.boro}
+          address={results.address}
+          city={results.city}
+          zip={results.zip}
+          inspection_date={results.inspection_date}
+          results={results.results}
+          state={results.state}
 
         
         />

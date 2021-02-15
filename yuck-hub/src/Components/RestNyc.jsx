@@ -4,15 +4,15 @@ import "../App.css";
 
 
 
-const Rest = ({name, violations, rating, building, street, zipcode, critical_flag, date, action, grade, boro}) => {
+const RestNyc = ({name, violations, rating, building, street, zipcode, critical_flag, date, action, grade, boro}) => {
   return (
     <div className="restContainer">
       <h1>{name}</h1>
       <p>{building} {street}</p>
-      <p>{zipcode} { boro}</p>
+      <p>{boro} { zipcode }</p>
       <h2>Rating:</h2>
       <h3>{rating}</h3>
-      {/* <h2>{critical_flag}</h2> */}
+      <h2>{critical_flag}</h2>
       <h2>{date}</h2>
       <p>{ action }</p>
       <p>{violations}</p>
@@ -24,5 +24,5 @@ const Rest = ({name, violations, rating, building, street, zipcode, critical_fla
   );
 }
 
-export default Rest
+export default RestNyc
 
