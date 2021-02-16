@@ -1,10 +1,11 @@
 import React from 'react'
 import '../CSS/Header.css'
+import logo from '../CSS/mr-yuck-logo.png'
 
 export default function Header() {
   return (
     <div className="yuckHead">
-      <h1>yuckHub</h1>
+     <img src={logo} alt="logo"/>
     </div>
   )
 }

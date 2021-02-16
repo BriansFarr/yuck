@@ -10,6 +10,7 @@ import MainChi from './MainChi';
 import Landing from './Landing';
 import '../CSS/Header.css'
 
+
 export default function Home() {
   return (
     <>
