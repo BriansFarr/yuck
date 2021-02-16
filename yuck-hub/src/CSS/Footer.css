@@ -1,8 +1,10 @@
 .footer {
- /* padding-top: 75vh;  */
- background-color: white;
+ padding-top: .5vh; 
+ background-color: #333;
 
 }
 
-
+h1{
+  color:white;
+}
         
