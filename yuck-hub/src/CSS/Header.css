@@ -1,8 +1,11 @@
 .yuckHead{
-  background-color: crimson;
-  padding-top: 1vh;
   display: flex;
-  justify-content: center;
+  width: 5%;
+  height: 10%;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
 }
 
 .Home{
