@@ -4,13 +4,16 @@
   height: 10%;
   position: fixed;
   top: 10px;
+  bottom: 20px;
   left: 10px;
+  right: 10px;
   z-index: 1000;
+  max-width: 100;
 }
 
 .Home{
-  background-color: crimson;
-  padding-top: 1vh;
+  background-color: #80b918;
+  padding-top: 10vh;
   padding-bottom: 1vh;
   margin: auto;
   text-align: center;
