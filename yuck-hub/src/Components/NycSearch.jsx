@@ -62,7 +62,7 @@ const NycSearch = () => {
           building={results.building}
           street={results.street}
           zipcode={results.zipcode}
-          date={results.inspection_date}
+          date={results.inspection_date.slice(0,- 13)}
           action={results.action}
           critical={results.critical_flag}
           grade={results.grade}

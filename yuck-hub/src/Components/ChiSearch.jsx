@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { StaticRouter } from 'react-router-dom/cjs/react-router-dom.min';
 import RestChi from './RestChi';
 
 
@@ -61,7 +62,7 @@ const ChiSearch = () => {
           address={results.address}
           city={results.city}
           zip={results.zip}
-          inspection_date={results.inspection_date}
+          inspection_date={results.inspection_date.slice(0,- 13)}
           results={results.results}
           state={results.state}
 
