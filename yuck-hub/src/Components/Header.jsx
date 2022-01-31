@@ -1,11 +1,11 @@
 import React from 'react'
 import '../CSS/Header.css'
-import logo from '../CSS/YH-for-brian.png'
+import logo from '../CSS/YH-for-brian\.png'
 
 export default function Header() {
   return (
     <div className="yuckHead">
-     <img src={logo} alt="logo"/>
+     <img src={logo} alt="logo" width="100%" height="100%"/>
     </div>
   )
 }
