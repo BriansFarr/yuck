@@ -1,24 +1,44 @@
-ul {
+.Nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #080707;
+}
+
+.Nav-title {
+  color: #fff;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.Nav-list {
+  display: flex;
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: rgb(8, 7, 7);
 }
 
-li {
-  float: left;
-}
-
-li {
+.Nav-item {
   display: block;
-  color: white;
+  color: #fff;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 
-li :hover {
-  background-color: rgb(95, 89, 89);
+.Nav-item:hover {
+  background-color: #5f5959;
 }
 
+.Nav-link {
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.Nav-link.active {
+  color: #5f5959;
+}

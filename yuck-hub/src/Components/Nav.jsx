@@ -1,28 +1,57 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import '../CSS/Nav.css'
+import Nav from './Nav'
 
+const links = [
+  {
+    label: 'Home',
+    to: '/',
+  },
+  {
+    label: 'NYC',
+    to: '/nyc',
+  },
+  {
+    label: 'Los Angeles',
+    to: '/LA',
+  },
+  {
+    label: 'Chicago',
+    to: '/chicago',
+  },
+  {
+    label: 'About',
+    to: '/about',
+  },
+]
 
-export default function Nav() {
+function App() {
+  return (
+    <div className="App">
+      <Nav title="My App" links={links} />
+      {/* Other components here */}
+    </div>
+  )
+}
+
+export function NavLinkList({ links }) {
+  return (
+    <ul className="Nav-list">
+      {links.map(link => (
+        <li key={link.to} className="Nav-item">
+          <NavLink to={link.to} className="Nav-link">{link.label}</NavLink>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+export default function Nav({ title, links }) {
   return (
     <nav className="Nav">
-      <ul>
-      <Link to="/">
-        <li>Home</li>
-        </Link>
-        <Link to ="/nyc">
-          <li>NYC</li>
-        </Link>
-        <Link to="/LA">
-          <li>Los Angeles</li>
-        </Link>
-        < Link to="/chicago">
-          <li>Chicago</li>
-        </Link>
-        < Link to="/about">
-          <li>About</li>
-        </Link>
-      </ul>
+      {title && <h1 className="Nav-title">{title}</h1>}
+      <NavLinkList links={links} />
     </nav>
   )
 }

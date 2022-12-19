@@ -28,7 +28,7 @@ export default function Home() {
             <Route path="/chicago" component={MainChi} />
             <Route path="/about" component={About}/>
             </Switch>
-            <Footer />
+            
           
 
       </Router>
