@@ -1,45 +1,45 @@
 import React from 'react';
 import axios from 'axios';
-import RestNyc from './RestNyc'
-
+import RestNyc from './RestNyc';
 
 export default class LandingPageSearch extends React.Component {
   state = {
-    rest: []
-  }
+    rest: [],
+  };
 
   componentDidMount() {
-    axios.get(`https://data.cityofnewyork.us/resource/43nn-pn8j.json?$limit=20&$order=inspection_date%20DESC`)
-      .then(res => {
-        const rest = res.data;
-        this.setState({ rest: rest });
-      })
+    axios
+      .get(
+        `https://data.cityofnewyork.us/resource/43nn-pn8j.json?$limit=20&$order=inspection_date%20DESC`
+      )
+      .then((res) => {
+        this.setState({ rest: res.data });
+      });
   }
 
   render() {
-    const {
-       rest
-    } = this.state;
+    const { rest } = this.state;
+
     return (
       <div>
-          {rest.map(results => (
-        <RestNyc key= {results.id}
-          name={results.dba}
-          violations={results.violation_description}
-          rating={results.score}
-          building={results.building}
-          street={results.street}
-          zipcode={results.zipcode}
-          date={results.inspection_date.slice(0,- 13)}
-          action={results.action}
-          critical={results.critical_flag}
-          grade={results.grade}
-          boro={results.boro}
-        
-        />
-        
-      ))}
+        {rest.map((results) => (
+          <RestNyc
+            key={results.id}
+            name={results.dba}
+            violations={results.violation_description}
+            rating={results.score}
+            building={results.building}
+            street={results.street}
+            zipcode={results.zipcode}
+            date={results.inspection_date.slice(0, -13)}
+            action={results.action}
+            critical={results.critical_flag}
+            grade={results.grade ? results.grade : ''} // check if grade exists before rendering
+            boro={results.boro}
+          />
+        ))}
       </div>
-    )
+    );
   }
 }
+
